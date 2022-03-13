@@ -1,15 +1,5 @@
 import './style.css'
-
-// const app = document.querySelector<HTMLDivElement>('#app')!
-
-// app.innerHTML = `
-//   <h1>Hello Vite!</h1>
-//   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-//   <div id="game"></div>
-// `;
-
 import 'phaser';
-import { MenuScene } from './menu-scene';
 import { scenesArr } from './scenes';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
@@ -28,7 +18,7 @@ const GameConfig: Phaser.Types.Core.GameConfig = {
       debug: false
     }
   },
-  backgroundColor: '#300000',
+  backgroundColor: '#000000',
   render: { pixelArt: false, antialias: true },
   scale: {
     mode: Phaser.Scale.FIT,
