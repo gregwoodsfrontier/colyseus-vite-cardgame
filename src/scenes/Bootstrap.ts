@@ -20,6 +20,8 @@ export default class Bootstrap extends Phaser.Scene
     {
         // TODO load assets in bootstrap
 		this.load.atlas('all-cards', 'all_cards.png', 'all_cards.json')
+		this.load.atlas('cards', 'cards.png', 'cards.json');
+		this.load.image('black-hole', 'black-hole.png')
     }
 
 	create()
@@ -41,6 +43,6 @@ export default class Bootstrap extends Phaser.Scene
 
 	private createNewGame()
 	{
-		this.scene.launch(SceneKeys.Game)
+		this.scene.launch(SceneKeys.Test)
 	}
 }
