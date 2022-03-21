@@ -17,32 +17,17 @@ export default class GameScene extends Phaser.Scene
     
     create()
     {   
-        const {width, height} = this.scale
+        // const {width, height} = this.scale
         // const graphics = this.add.graphics()
-
-        /* const zone = this.createCommonArea(
-            width / 2 - 500/2,
-            height / 2 - 100/2,
-            500,
-            100,
-            graphics
-        ) */
 
         this.createLayout();
 
         this.cursors = this.input.keyboard.createCursorKeys()
-
-        // create Common Area
         
-
         this.input.on('drag', (p: Phaser.Input.Pointer, spr: Phaser.GameObjects.Sprite) => {
             spr.x = p.x
             spr.y = p.y
         })
-
-        this.preX = width * 0.7
-        this.preY = height * 0.2
-
     }
 
     update()
