@@ -43,6 +43,6 @@ export default class Bootstrap extends Phaser.Scene
 
 	private createNewGame()
 	{
-		this.scene.launch(SceneKeys.Test)
+		this.scene.launch(SceneKeys.Game)
 	}
 }

@@ -3,14 +3,11 @@ import 'phaser';
 import { scenesArr } from './scenes';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
-  width: 800,
+  width: 920,
   height: 600,
   type: Phaser.AUTO,
   parent: 'app',
   scene: scenesArr,
-  input: {
-    keyboard: true
-  },
   physics: {
     default: 'arcade',
     arcade: {

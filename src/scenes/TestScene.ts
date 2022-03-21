@@ -34,8 +34,11 @@ export default class TestScene extends Phaser.Scene {
     
         //  A drop zone
         const hitArea = new Phaser.Geom.Rectangle(0, 0, 300, 500)
-        const zone = this.add.zone(500, 300, 300, 500).setDropZone(hitArea, () => {});
+        // const zone = this.add.zone(500, 300, 300, 500).setDropZone(hitArea, () => {});
     
+        const zone = this.add.zone(500, 300, 300, 500).setInteractive(undefined, undefined, true)
+    
+
         //  Just a visual display of the drop zone
         const graphics = this.add.graphics();
         graphics.lineStyle(2, 0xffff00);

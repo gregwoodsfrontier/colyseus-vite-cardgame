@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="920"
+   height="600"
+   viewBox="0 0 243.41666 158.75"
+   version="1.1"
+   id="svg839"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="board_layout.svg">
+  <defs
+     id="defs833">
+    <rect
+       x="112.7905"
+       y="5.2705843"
+       width="25.298805"
+       height="17.076693"
+       id="rect5163" />
+    <rect
+       x="12.438579"
+       y="8.8545817"
+       width="31.834329"
+       height="13.703519"
+       id="rect5137" />
+    <rect
+       x="4.0056441"
+       y="4.0056441"
+       width="30.569389"
+       height="12.016932"
+       id="rect5127" />
+    <rect
+       x="39.845618"
+       y="94.238048"
+       width="15.60093"
+       height="14.125166"
+       id="rect4691" />
+    <pattern
+       id="a"
+       patternUnits="userSpaceOnUse"
+       width="4"
+       height="4">
+      <path
+         d="M0 0h1v1H0zm2 2h1v1H2z"
+         id="path4131" />
+    </pattern>
+    <pattern
+       id="b"
+       patternUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="2"
+       height="2">
+      <path
+         d="M0 0h1v1H0z"
+         id="path4134" />
+    </pattern>
+    <pattern
+       id="c"
+       patternUnits="userSpaceOnUse"
+       x="-2"
+       y="0"
+       width="8"
+       height="1">
+      <path
+         d="M0 0h1v1H0zm2 0h1v1H2zm2 0h1v1H4z"
+         id="path4137" />
+    </pattern>
+    <pattern
+       id="d"
+       patternUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="4"
+       height="4">
+      <path
+         d="M0 0h1v1H0zm0 2h1v1H0zm1 0V1h1v1zm1 0h1v1H2zm0-1h1V0H2zm1 2h1v1H3z"
+         id="path4140" />
+    </pattern>
+    <pattern
+       id="e"
+       patternUnits="userSpaceOnUse"
+       width="64"
+       height="32">
+      <path
+         d="M4 4h1v1H4zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1z"
+         id="path4143" />
+      <path
+         fill="url(#a)"
+         d="M0 8h64v7H0z"
+         id="path4145" />
+      <path
+         fill="url(#b)"
+         d="M0 16h64v1H0z"
+         id="path4147" />
+      <path
+         fill="url(#c)"
+         d="M0 18h64v1H0z"
+         id="path4149" />
+      <path
+         fill="url(#b)"
+         d="M22 18h15v1H22zM0 20h64v3H0z"
+         id="path4151" />
+      <path
+         fill="url(#d)"
+         d="M0 24h64v8H0z"
+         id="path4153" />
+    </pattern>
+    <mask
+       id="f">
+      <path
+         fill="url(#e)"
+         d="M0 0h64v32H0z"
+         id="path4156" />
+    </mask>
+    <pattern
+       id="pattern4175"
+       patternUnits="userSpaceOnUse"
+       width="4"
+       height="4">
+      <path
+         d="M0 0h1v1H0zm2 2h1v1H2z"
+         id="path4173" />
+    </pattern>
+    <pattern
+       id="pattern4179"
+       patternUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="2"
+       height="2">
+      <path
+         d="M0 0h1v1H0z"
+         id="path4177" />
+    </pattern>
+    <pattern
+       id="pattern4183"
+       patternUnits="userSpaceOnUse"
+       x="-2"
+       y="0"
+       width="8"
+       height="1">
+      <path
+         d="M0 0h1v1H0zm2 0h1v1H2zm2 0h1v1H4z"
+         id="path4181" />
+    </pattern>
+    <pattern
+       id="pattern4187"
+       patternUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="4"
+       height="4">
+      <path
+         d="M0 0h1v1H0zm0 2h1v1H0zm1 0V1h1v1zm1 0h1v1H2zm0-1h1V0H2zm1 2h1v1H3z"
+         id="path4185" />
+    </pattern>
+    <pattern
+       id="pattern4201"
+       patternUnits="userSpaceOnUse"
+       width="64"
+       height="32">
+      <path
+         d="M4 4h1v1H4zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1z"
+         id="path4189" />
+      <path
+         fill="url(#a)"
+         d="M0 8h64v7H0z"
+         id="path4191" />
+      <path
+         fill="url(#b)"
+         d="M0 16h64v1H0z"
+         id="path4193" />
+      <path
+         fill="url(#c)"
+         d="M0 18h64v1H0z"
+         id="path4195" />
+      <path
+         fill="url(#b)"
+         d="M22 18h15v1H22zM0 20h64v3H0z"
+         id="path4197" />
+      <path
+         fill="url(#d)"
+         d="M0 24h64v8H0z"
+         id="path4199" />
+    </pattern>
+    <mask
+       id="mask4205">
+      <path
+         fill="url(#e)"
+         d="M0 0h64v32H0z"
+         id="path4203" />
+    </mask>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.255"
+     inkscape:cx="460"
+     inkscape:cy="300"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer3"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1755"
+     inkscape:window-height="997"
+     inkscape:window-x="143"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata836">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff2a2a;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841"
+       width="36.298859"
+       height="49.528023"
+       x="55.404751"
+       y="-37.199429"
+       ry="1.6841747" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="gotchi">
+    <g
+       id="g4675"
+       transform="matrix(0.80499646,0,0,0.84419049,-1.090415,103.86305)">
+      <g
+         class="gotchi-bg"
+         id="g4169">
+        <defs
+           fill="#fff"
+           id="defs4159">
+          <pattern
+             id="pattern4486"
+             patternUnits="userSpaceOnUse"
+             width="4"
+             height="4">
+            <path
+               d="M0 0h1v1H0zm2 2h1v1H2z"
+               id="path4484" />
+          </pattern>
+          <pattern
+             id="pattern4490"
+             patternUnits="userSpaceOnUse"
+             x="0"
+             y="0"
+             width="2"
+             height="2">
+            <path
+               d="M0 0h1v1H0z"
+               id="path4488" />
+          </pattern>
+          <pattern
+             id="pattern4494"
+             patternUnits="userSpaceOnUse"
+             x="-2"
+             y="0"
+             width="8"
+             height="1">
+            <path
+               d="M0 0h1v1H0zm2 0h1v1H2zm2 0h1v1H4z"
+               id="path4492" />
+          </pattern>
+          <pattern
+             id="pattern4498"
+             patternUnits="userSpaceOnUse"
+             x="0"
+             y="0"
+             width="4"
+             height="4">
+            <path
+               d="M0 0h1v1H0zm0 2h1v1H0zm1 0V1h1v1zm1 0h1v1H2zm0-1h1V0H2zm1 2h1v1H3z"
+               id="path4496" />
+          </pattern>
+          <pattern
+             id="pattern4512"
+             patternUnits="userSpaceOnUse"
+             width="64"
+             height="32">
+            <path
+               d="M4 4h1v1H4zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1z"
+               id="path4500" />
+            <path
+               fill="url(#a)"
+               d="M0 8h64v7H0z"
+               id="path4502" />
+            <path
+               fill="url(#b)"
+               d="M0 16h64v1H0z"
+               id="path4504" />
+            <path
+               fill="url(#c)"
+               d="M0 18h64v1H0z"
+               id="path4506" />
+            <path
+               fill="url(#b)"
+               d="M22 18h15v1H22zM0 20h64v3H0z"
+               id="path4508" />
+            <path
+               fill="url(#d)"
+               d="M0 24h64v8H0z"
+               id="path4510" />
+          </pattern>
+          <mask
+             id="mask4516">
+            <path
+               fill="url(#e)"
+               d="M 0,0 H 64 V 32 H 0 Z"
+               id="path4514" />
+          </mask>
+        </defs>
+        <path
+           fill="#ffffff"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4161" />
+        <path
+           fill="#dea8ff"
+           class="gotchi-secondary"
+           mask="url(#f)"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4163" />
+        <path
+           fill="#dea8ff"
+           class="gotchi-secondary"
+           d="M 0,32 H 64 V 64 H 0 Z"
+           id="path4165" />
+        <path
+           mask="url(#f)"
+           fill="#ffffff"
+           transform="matrix(1,0,0,-1,0,64)"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4167" />
+      </g>
+      <g
+         class="gotchi-bg"
+         id="g4217">
+        <defs
+           fill="#fff"
+           id="defs4207">
+          <pattern
+             id="pattern4526"
+             patternUnits="userSpaceOnUse"
+             width="4"
+             height="4">
+            <path
+               d="M0 0h1v1H0zm2 2h1v1H2z"
+               id="path4524" />
+          </pattern>
+          <pattern
+             id="pattern4530"
+             patternUnits="userSpaceOnUse"
+             x="0"
+             y="0"
+             width="2"
+             height="2">
+            <path
+               d="M0 0h1v1H0z"
+               id="path4528" />
+          </pattern>
+          <pattern
+             id="pattern4534"
+             patternUnits="userSpaceOnUse"
+             x="-2"
+             y="0"
+             width="8"
+             height="1">
+            <path
+               d="M0 0h1v1H0zm2 0h1v1H2zm2 0h1v1H4z"
+               id="path4532" />
+          </pattern>
+          <pattern
+             id="pattern4538"
+             patternUnits="userSpaceOnUse"
+             x="0"
+             y="0"
+             width="4"
+             height="4">
+            <path
+               d="M0 0h1v1H0zm0 2h1v1H0zm1 0V1h1v1zm1 0h1v1H2zm0-1h1V0H2zm1 2h1v1H3z"
+               id="path4536" />
+          </pattern>
+          <pattern
+             id="pattern4552"
+             patternUnits="userSpaceOnUse"
+             width="64"
+             height="32">
+            <path
+               d="M4 4h1v1H4zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1zm7 0h1v1h-1z"
+               id="path4540" />
+            <path
+               fill="url(#a)"
+               d="M0 8h64v7H0z"
+               id="path4542" />
+            <path
+               fill="url(#b)"
+               d="M0 16h64v1H0z"
+               id="path4544" />
+            <path
+               fill="url(#c)"
+               d="M0 18h64v1H0z"
+               id="path4546" />
+            <path
+               fill="url(#b)"
+               d="M22 18h15v1H22zM0 20h64v3H0z"
+               id="path4548" />
+            <path
+               fill="url(#d)"
+               d="M0 24h64v8H0z"
+               id="path4550" />
+          </pattern>
+          <mask
+             id="mask4556">
+            <path
+               fill="url(#e)"
+               d="M 0,0 H 64 V 32 H 0 Z"
+               id="path4554" />
+          </mask>
+        </defs>
+        <path
+           fill="#ffffff"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4209" />
+        <path
+           fill="#dea8ff"
+           class="gotchi-secondary"
+           mask="url(#f)"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4211" />
+        <path
+           fill="#dea8ff"
+           class="gotchi-secondary"
+           d="M 0,32 H 64 V 64 H 0 Z"
+           id="path4213" />
+        <path
+           mask="url(#f)"
+           fill="#ffffff"
+           transform="matrix(1,0,0,-1,0,64)"
+           d="M 0,0 H 64 V 32 H 0 Z"
+           id="path4215" />
+      </g>
+      <g
+         class="gotchi-body"
+         id="g4253">
+        <g
+           class="gotchi-primary"
+           id="g4237">
+          <path
+             d="m 21,12 h 2 v -2 h -4 v 2 h 1 z"
+             id="path4219" />
+          <path
+             d="m 19,14 v -2 h -2 v 2 h 1 z m 6,-4 h 2 V 8 h -4 v 2 h 1 z"
+             id="path4221" />
+          <path
+             d="m 29,8 h 8 V 6 H 27 v 2 h 1 z m 16,6 h 2 v -2 h -2 v 1 z"
+             id="path4223" />
+          <path
+             d="m 48,14 h -1 v 39 h -2 v 2 h 4 V 14 Z M 37,10 h 4 V 8 h -4 v 1 z"
+             id="path4225" />
+          <path
+             d="m 41,12 h 4 v -2 h -4 v 1 z M 17,53 V 14 h -2 v 41 h 4 v -2 h -1 z"
+             id="path4227" />
+          <path
+             d="m 24,51 h -5 v 2 h 5 v -1 z"
+             id="path4229" />
+          <path
+             d="m 27,53 h -3 v 2 h 5 v -2 h -1 z m 18,-2 h -5 v 2 h 5 v -1 z"
+             id="path4231" />
+          <path
+             d="m 35,51 h -6 v 2 h 6 v -1 z"
+             id="path4233" />
+          <path
+             d="m 38,53 h -3 v 2 h 5 v -2 h -1 z"
+             id="path4235" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4249">
+          <path
+             d="m 18,43 v 6 h 2 v -1 h 2 v 1 h 2 v 2 h -5 v 2 H 17 V 14 h 2 v 1 h -1 v 26 z"
+             id="path4239" />
+          <path
+             d="m 27,51 h -3 v 2 h 5 v -2 h -1 z m 11,0 h -3 v 2 h 5 v -2 h -1 z"
+             id="path4241" />
+          <path
+             d="m 35,49 h -2 v -1 h -2 v 1 h -2 v 2 h 6 V 50 Z M 25,11 h 2 v -1 h -4 v 1 h 1 z m -4,2 h 2 v -1 h -4 v 1 h 1 z m 24,31 v 5 h -1 v -1 h -2 v 1 h -2 v 2 h 5 v 2 h 2 V 14 h -2 v 29 z"
+             id="path4243" />
+          <path
+             d="M 37,8 H 27 v 1 h 5 v 1 h 5 V 9 Z m 8,4 h -4 v 2 h 4 v -1 z"
+             id="path4245" />
+          <path
+             d="m 41,10 h -4 v 2 h 4 v -1 z"
+             id="path4247" />
+        </g>
+        <path
+           d="M 44,14 H 41 V 12 H 37 V 10 H 32 V 9 h -5 v 2 h -4 v 2 h -4 v 2 h -1 v 34 h 2 v -1 h 2 v 1 h 2 v 2 h 5 v -2 h 2 v -1 h 2 v 1 h 2 v 2 h 5 v -2 h 2 v -1 h 2 v 1 h 1 V 14 Z"
+           fill="#ffffff"
+           id="path4251" />
+      </g>
+      <path
+         class="gotchi-cheek"
+         d="m 21,32 v 2 h 2 v -2 h -1 z m 21,0 h -1 v 2 h 2 v -2 z"
+         id="path4255" />
+      <g
+         class="gotchi-primary-mouth"
+         id="g4263">
+        <path
+           d="m 29,32 h -2 v 2 h 2 v -1 z"
+           id="path4257" />
+        <path
+           d="m 33,34 h -4 v 2 h 6 v -2 h -1 z"
+           id="path4259" />
+        <path
+           d="m 36,32 h -1 v 2 h 2 v -2 z"
+           id="path4261" />
+      </g>
+      <g
+         class="gotchi-shadow"
+         id="g4267">
+        <path
+           opacity="0.25"
+           d="m 25,58 h -6 v 1 h 1 v 1 h 24 v -1 h 1 v -1 h -1 z"
+           fill="#000000"
+           id="path4265" />
+      </g>
+      <g
+         class="gotchi-collateral"
+         id="g4271">
+        <path
+           d="m 34,13 v -1 h -4 v 1 h -1 v 1 h -1 v 1 h -1 v 4 h 1 v 1 h 1 v 1 h 1 v 1 h 4 v -1 h 1 v -1 h 1 v -1 h 1 v -4 h -1 v -1 h -1 v -1 z m -2,1 h 1 v 1 h 1 v 1 h 1 v 2 h -1 v 1 h -1 v 1 h -2 v -1 h -1 v -1 h -1 v -2 h 1 v -1 h 1 v -1 z"
+           fill="#0000b9"
+           id="path4269" />
+      </g>
+      <g
+         class="gotchi-eyeColor"
+         id="g4277">
+        <path
+           d="m 23,28 v 1 1 h 1 1 1 1 v -1 -1 h 1 1 v -1 -1 -1 -1 h -1 -1 v -1 -1 h -1 -1 -1 -1 v 1 1 h -1 -1 v 1 1 1 1 h 1 z"
+           id="path4273" />
+        <path
+           d="m 35,24 v 1 1 1 1 h 1 1 v 1 1 h 1 1 1 1 v -1 -1 h 1 1 v -1 -1 -1 -1 h -1 -1 v -1 -1 h -1 -1 -1 -1 v 1 1 h -1 z"
+           id="path4275" />
+      </g>
+      <g
+         class="gotchi-handsDownClosed"
+         id="g4319">
+        <g
+           class="gotchi-primary"
+           id="g4287">
+          <path
+             d="m 19,42 h 1 v 1 h -1 z m 1,-6 h 1 v 1 h -1 z"
+             id="path4279" />
+          <path
+             d="m 21,37 h 1 v 1 h -1 z m 5,3 v 4 h 1 v -4 z m -5,3 h -1 v 1 h 2 v -1 z"
+             id="path4281" />
+          <path
+             d="m 24,44 h -2 v 1 h 4 v -1 h -1 z m 1,-5 h -1 v 1 h 2 v -1 z"
+             id="path4283" />
+          <path
+             d="m 23,38 h -1 v 1 h 2 v -1 z"
+             id="path4285" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4295">
+          <path
+             d="m 19,43 h 1 v 1 h -1 z m 5,2 h -2 v 1 h 4 v -1 h -1 z"
+             id="path4289" />
+          <path
+             d="m 27,41 v 3 h 1 v -3 z m -6,3 h -1 v 1 h 2 v -1 z"
+             id="path4291" />
+          <path
+             d="m 26,44 h 1 v 1 h -1 z m -7,-3 h -1 v 2 h 1 v -1 z"
+             id="path4293" />
+        </g>
+        <g
+           class="gotchi-primary"
+           id="g4309">
+          <path
+             d="m 44,42 h 1 v 1 h -1 z m -1,-6 h 1 v 1 h -1 z"
+             id="path4297" />
+          <path
+             d="m 42,37 h 1 v 1 h -1 z"
+             id="path4299" />
+          <path
+             d="m 42,39 v -1 h -2 v 1 h 1 z m 0,4 v 1 h 2 v -1 h -1 z"
+             id="path4301" />
+          <path
+             d="m 40,44 h -2 v 1 h 4 v -1 h -1 z"
+             id="path4303" />
+          <path
+             d="m 38,42 v -2 h -1 v 4 h 1 v -1 z"
+             id="path4305" />
+          <path
+             d="m 40,40 v -1 h -2 v 1 h 1 z"
+             id="path4307" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4317">
+          <path
+             d="m 42,44 v 1 h 2 v -1 h -1 z m -5,-2 v -1 h -1 v 3 h 1 v -1 z"
+             id="path4311" />
+          <path
+             d="m 40,45 h -2 v 1 h 4 v -1 h -1 z"
+             id="path4313" />
+          <path
+             d="m 37,44 h 1 v 1 h -1 z m 7,-1 h 1 v 1 h -1 z"
+             id="path4315" />
+        </g>
+      </g>
+      <g
+         class="gotchi-handsDownOpen"
+         id="g4361">
+        <g
+           class="gotchi-primary"
+           id="g4329">
+          <path
+             d="m 14,40 h 1 v 1 h -1 z m -1,-6 h 1 v 1 h -1 z"
+             id="path4321" />
+          <path
+             d="m 14,33 h 1 v 1 h -1 z m -2,2 h 1 v 1 h -1 z m -5,3 h 1 v 4 H 7 Z m 5,3 h 2 v 1 h -2 z"
+             id="path4323" />
+          <path
+             d="m 8,42 h 4 v 1 H 8 Z m 0,-5 h 2 v 1 H 8 Z"
+             id="path4325" />
+          <path
+             d="m 10,36 h 2 v 1 h -2 z"
+             id="path4327" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4337">
+          <path
+             d="m 14,39 h 1 v 1 h -1 z"
+             id="path4331" />
+          <path
+             d="m 12,40 h 2 v 1 h -2 z"
+             id="path4333" />
+          <path
+             d="m 8,41 h 4 v 1 H 8 Z"
+             id="path4335" />
+        </g>
+        <path
+           d="m 8,38 v 3 h 4 v -1 h 2 v -1 h 1 v -5 h -1 v 1 h -1 v 1 h -1 v 1 h -2 v 1 z"
+           fill="#ffffff"
+           id="path4339" />
+        <g
+           class="gotchi-primary"
+           id="g4349">
+          <path
+             d="m 49,40 h 1 v 1 h -1 z m 1,-6 h 1 v 1 h -1 z"
+             id="path4341" />
+          <path
+             d="m 49,33 h 1 v 1 h -1 z m 2,2 h 1 v 1 h -1 z m 5,3 h 1 v 4 h -1 z m -6,3 h 2 v 1 h -2 z"
+             id="path4343" />
+          <path
+             d="m 52,42 h 4 v 1 h -4 z m 2,-5 h 2 v 1 h -2 z"
+             id="path4345" />
+          <path
+             d="m 52,36 h 2 v 1 h -2 z"
+             id="path4347" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4357">
+          <path
+             d="m 49,39 h 1 v 1 h -1 z"
+             id="path4351" />
+          <path
+             d="m 50,40 h 2 v 1 h -2 z"
+             id="path4353" />
+          <path
+             d="m 52,41 h 4 v 1 h -4 z"
+             id="path4355" />
+        </g>
+        <path
+           d="m 54,38 v -1 h -2 v -1 h -1 v -1 h -1 v -1 h -1 v 5 h 1 v 1 h 2 v 1 h 4 v -3 z"
+           fill="#ffffff"
+           id="path4359" />
+      </g>
+      <g
+         class="gotchi-handsUp"
+         id="g4415">
+        <g
+           class="gotchi-secondary"
+           id="g4371">
+          <path
+             d="m 50,38 h 1 v 1 h -1 z"
+             id="path4363" />
+          <path
+             d="m 49,39 h 1 v 1 h -1 z m 2,-2 h 1 v 1 h -1 z"
+             id="path4365" />
+          <path
+             d="m 52,36 h 2 v 1 h -2 z"
+             id="path4367" />
+          <path
+             d="m 54,35 h 2 v 1 h -2 z"
+             id="path4369" />
+        </g>
+        <path
+           d="m 52,32 v 1 h -2 v 1 h -1 v 5 h 1 v -1 h 1 v -1 h 1 v -1 h 2 v -1 h 2 v -3 z"
+           fill="#ffffff"
+           id="path4373" />
+        <g
+           class="gotchi-primary"
+           id="g4387">
+          <path
+             d="m 49,33 h 1 v 1 h -1 z"
+             id="path4375" />
+          <path
+             d="m 50,32 h 2 v 1 h -2 z m 0,7 h 1 v 1 h -1 z"
+             id="path4377" />
+          <path
+             d="m 49,40 h 1 v 1 h -1 z m 2,-2 h 1 v 1 h -1 z"
+             id="path4379" />
+          <path
+             d="m 52,37 h 2 v 1 h -2 z m 0,-6 h 4 v 1 h -4 z"
+             id="path4381" />
+          <path
+             d="m 56,32 h 1 v 4 h -1 z"
+             id="path4383" />
+          <path
+             d="m 54,36 h 2 v 1 h -2 z"
+             id="path4385" />
+        </g>
+        <g
+           class="gotchi-secondary"
+           id="g4397">
+          <path
+             d="m 13,38 h 1 v 1 h -1 z"
+             id="path4389" />
+          <path
+             d="m 14,39 h 1 v 1 h -1 z m -2,-2 h 1 v 1 h -1 z"
+             id="path4391" />
+          <path
+             d="m 10,36 h 2 v 1 h -2 z"
+             id="path4393" />
+          <path
+             d="m 8,35 h 2 v 1 H 8 Z"
+             id="path4395" />
+        </g>
+        <path
+           d="m 8,32 v 3 h 2 v 1 h 2 v 1 h 1 v 1 h 1 v 1 h 1 v -5 h -1 v -1 h -2 v -1 z"
+           fill="#ffffff"
+           id="path4399" />
+        <g
+           class="gotchi-primary"
+           id="g4413">
+          <path
+             d="m 14,33 h 1 v 1 h -1 z"
+             id="path4401" />
+          <path
+             d="m 12,32 h 2 v 1 h -2 z m 1,7 h 1 v 1 h -1 z"
+             id="path4403" />
+          <path
+             d="m 14,40 h 1 v 1 h -1 z m -2,-2 h 1 v 1 h -1 z"
+             id="path4405" />
+          <path
+             d="m 10,37 h 2 v 1 H 10 Z M 8,31 h 4 v 1 H 8 Z"
+             id="path4407" />
+          <path
+             d="m 7,32 h 1 v 4 H 7 Z"
+             id="path4409" />
+          <path
+             d="m 8,36 h 2 v 1 H 8 Z"
+             id="path4411" />
+        </g>
+      </g>
+      <g
+         class="gotchi-wearable wearable-eyes"
+         id="g4433">
+        <svg
+           x="15"
+           y="21"
+           version="1.1"
+           id="svg4431"
+           width="100%"
+           height="100%">
+          <path
+             d="m 18,8 h 1 v 1 h 1 v 1 H 30 V 9 h 1 V 8 h 1 V 2 h 2 V 0 H 0 v 2 h 2 v 6 h 1 v 1 h 1 v 1 H 14 V 9 h 1 V 8 h 1 V 4 h 2 z"
+             id="path4417" />
+          <path
+             d="M 30,7 H 29 V 8 H 21 V 7 H 20 V 3 h 1 V 2 h 8 v 1 h 1 z M 14,7 H 13 V 8 H 5 V 7 H 4 V 3 H 5 V 2 h 8 v 1 h 1 z"
+             id="path4419" />
+          <path
+             d="M 29,3 V 2 h -8 v 1 h -1 v 4 h 1 v 1 h 8 V 7 h 1 V 3 Z M 13,2 H 5 V 3 H 4 v 4 h 1 v 1 h 8 V 7 h 1 V 3 h -1 z"
+             fill="#ffffff"
+             id="path4421" />
+          <path
+             d="m 16,1 h 1 v 1 h -1 z"
+             fill="#88bdf3"
+             id="path4423" />
+          <path
+             d="m 17,1 h 1 v 1 h -1 z"
+             fill="#5795f1"
+             id="path4425" />
+          <path
+             d="m 17,2 h 1 v 1 h -1 z"
+             fill="#3075ee"
+             id="path4427" />
+          <path
+             d="m 16,2 h 1 v 1 h -1 z m 6,2 v 1 h 2 v 1 h 2 V 5 h 2 V 4 Z M 6,4 v 1 h 2 v 1 h 2 V 5 h 2 V 4 Z"
+             fill="#205fec"
+             id="path4429" />
+        </svg>
+      </g>
+      <g
+         class="gotchi-wearable wearable-head"
+         id="g4439">
+        <svg
+           x="15"
+           y="6"
+           version="1.1"
+           id="svg4437"
+           width="100%"
+           height="100%">
+          <path
+             d="M 12,0 V 2 H 8 V 4 H 4 V 6 H 2 V 8 H 0 v 8 H 3 V 15 H 4 V 14 H 5 V 13 H 6 V 12 H 7 V 11 H 8 V 10 H 9 V 9 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 H 36 V 14 H 35 V 13 H 34 V 8 H 32 V 6 H 30 V 4 H 26 V 2 H 22 V 0 Z"
+             id="path4435" />
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="score">
+    <g
+       id="g4758"
+       transform="translate(-23.190571,-7.5896414)">
+      <circle
+         style="fill:#aa8800;stroke:#ffcc00;stroke-width:1;stroke-linejoin:round"
+         id="path4685"
+         cx="47.751495"
+         cy="100.24651"
+         r="11.279051" />
+      <text
+         xml:space="preserve"
+         id="text4689"
+         style="font-size:10.5833px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';white-space:pre;shape-inside:url(#rect4691);fill:#ffffff;"
+         transform="translate(1.0541169,0.21082337)"><tspan
+           x="39.845703"
+           y="103.60202"><tspan
+             style="fill:#ffffff">10</tspan></tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="common">
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8"
+       width="36.298859"
+       height="49.528023"
+       x="4.3401546"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-9"
+       width="36.298859"
+       height="49.528023"
+       x="44.027657"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-6"
+       width="36.298859"
+       height="49.528023"
+       x="83.715149"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-9-2"
+       width="36.298859"
+       height="49.528023"
+       x="123.40264"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-9-2-1"
+       width="36.298859"
+       height="49.528023"
+       x="163.09016"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-9-2-6"
+       width="36.298859"
+       height="49.528023"
+       x="202.77766"
+       y="26.829739"
+       ry="1.6841747" />
+    <rect
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.742809;stroke-linejoin:round"
+       id="rect841-8-9-2-6-9"
+       width="36.298859"
+       height="49.528023"
+       x="201.45474"
+       y="95.621407"
+       ry="1.6841747" />
+    <g
+       id="g5059">
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0"
+         width="36.218052"
+         height="49.417763"
+         x="53.951336"
+         y="86.339073"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5"
+         width="36.218052"
+         height="49.417763"
+         x="54.161686"
+         y="94.122177"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5-8"
+         width="36.218052"
+         height="49.417763"
+         x="54.161694"
+         y="102.32599"
+         ry="1.6804253" />
+    </g>
+    <g
+       id="g5059-5"
+       transform="translate(50.35481,-0.76949996)">
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-8"
+         width="36.218052"
+         height="49.417763"
+         x="53.951336"
+         y="86.339073"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5-4"
+         width="36.218052"
+         height="49.417763"
+         x="54.161686"
+         y="94.122177"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5-8-8"
+         width="36.218052"
+         height="49.417763"
+         x="54.161694"
+         y="102.32599"
+         ry="1.6804253" />
+    </g>
+    <g
+       id="g5059-5-5"
+       transform="translate(100.70962,-0.98032342)">
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-8-9"
+         width="36.218052"
+         height="49.417763"
+         x="53.951336"
+         y="86.339073"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5-4-4"
+         width="36.218052"
+         height="49.417763"
+         x="54.161686"
+         y="94.122177"
+         ry="1.6804253" />
+      <rect
+         style="fill:#d4aa00;stroke:#000000;stroke-width:0.741155;stroke-linejoin:round"
+         id="rect841-8-9-0-5-8-8-3"
+         width="36.218052"
+         height="49.417763"
+         x="54.161694"
+         y="102.32599"
+         ry="1.6804253" />
+    </g>
+    <path
+       style="fill:#ff6600;stroke:#ffcc00;stroke-width:1.0233;stroke-linejoin:round"
+       d="M -8.399422,23.823041 H 252.32206"
+       id="path5172" />
+    <path
+       style="fill:#ff6600;stroke:#ffcc00;stroke-width:1;stroke-linejoin:round"
+       d="M -3.056937,79.058764 H 245.92546"
+       id="path5172-8" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="sets" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="remaining">
+    <text
+       xml:space="preserve"
+       id="text5125"
+       style="font-size:4.58611px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';white-space:pre;shape-inside:url(#rect5127);"
+       transform="matrix(1.4194687,0,0,1.4194687,8.4915695,-3.0603387)"><tspan
+         x="4.0058594"
+         y="8.063492"><tspan
+           style="shape-inside:url(#rect5127)">Remaining</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text5135"
+       style="font-size:10.5833px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';white-space:pre;shape-inside:url(#rect5137);"
+       transform="translate(11.604558,0.91206433)"><tspan
+         x="12.439453"
+         y="18.8435"><tspan
+           style="font-size:11.2889px">20</tspan></tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="rivalPoints">
+    <path
+       sodipodi:type="star"
+       style="fill:#ff2a2a;stroke:#ffcc00;stroke-width:1;stroke-linejoin:round"
+       id="path5157"
+       sodipodi:sides="6"
+       sodipodi:cx="111.94721"
+       sodipodi:cy="5.9030542"
+       sodipodi:r1="16.023964"
+       sodipodi:r2="13.877159"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0.52359878"
+       inkscape:flatsided="true"
+       inkscape:rounded="0.2"
+       inkscape:randomized="0.006"
+       inkscape:transform-center-x="0.015389195"
+       inkscape:transform-center-y="0.0097569575"
+       transform="matrix(1.2377201,0,0,0.61126291,49.716625,7.4805188)"
+       d="m 128.05477,5.8557921 c 0.0232,3.1988086 -5.28288,12.2656659 -8.07054,13.8468249 -2.78766,1.581159 -13.25439,1.642339 -16.02499,0.01497 -2.77061,-1.627372 -8.022996,-10.5617979 -8.020292,-13.7581956 0.0027,-3.1963976 5.234992,-12.383271 8.017752,-13.9565803 2.78276,-1.5733094 13.26197,-1.6442331 16.02499,-0.014967 2.76303,1.6292663 8.04988,10.6691421 8.07308,13.8679507 z" />
+    <text
+       xml:space="preserve"
+       id="text5161"
+       style="font-size:10.5833px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';white-space:pre;shape-inside:url(#rect5163);"
+       transform="translate(68.095949,-0.21082341)"><tspan
+         x="112.79102"
+         y="14.635224"><tspan>28</tspan></tspan></text>
+  </g>
+  <style
+     id="style4171">.gotchi-bg,.wearable-bg{display: none}
+    @keyframes downHands {
+      from {
+        --hand_translateY: -1px;
+      }
+      to {
+        --hand_translateY: -0.5px;
+      }
+    }
+    @keyframes up {
+      from {
+        transform: translate(0px, 0);
+      }
+      to {
+        transform: translate(0px, -1px);
+      }
+    }
+    @keyframes down {
+      from {
+        transform: translate(0px, 0);
+      }
+      to {
+        transform: translate(0px, 1px);
+      }
+    }
+    svg {
+      animation-name:down;
+      animation-duration:1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-timing-function: steps(1);
+    }
+    .gotchi-shadow {
+      animation: up 1s infinite linear steps(2);
+      animation-name:up;
+      animation-duration:1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-timing-function: steps(2);
+    }
+    .gotchi-wearable {
+      animation-name:down;
+      animation-duration:1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-timing-function: steps(1);
+    }
+    .gotchi-handsDownClosed, .gotchi-handsUp, .gotchi-handsDownOpen, .gotchi-handsDownClosed, .gotchi-body, .gotchi-eyeColor, .gotchi-collateral, .gotchi-cheek, .gotchi-primary-mouth, .gotchi-wearable, .gotchi-sleeves   {
+      animation-name:down;
+      animation-duration:1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-timing-function: steps(2);
+    }
+    .wearable-hand {
+      animation-name:downHands !important;
+      animation-duration:1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-timing-function: steps(2);
+      transform: translate(0, var(--hand_translateY));
+    }
+    .wearable-bg {
+      animation-name: none;
+    }
+  .gotchi-primary{fill:#0000B9;}.gotchi-secondary{fill:#D4DEF8;}.gotchi-cheek{fill:#F696C6;}.gotchi-eyeColor{fill:#0000B9;}.gotchi-primary-mouth{fill:#0000B9;}.gotchi-sleeves-up{display:none;}.gotchi-handsUp{display:none;}.gotchi-handsDownOpen{display:block;}.gotchi-handsDownClosed{display:none;}</style>
+</svg>

@@ -12,5 +12,9 @@ export enum SceneKeys {
     Test = 'test'
 }
 
+export enum ColorNumKeys {
+    Red = 0xff0000
+}
+
 // export const scenesArr = [HelloWorld]
 export const scenesArr = [BootStrap, GameScene, TestScene]
