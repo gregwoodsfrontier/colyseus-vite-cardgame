@@ -1,14 +1,14 @@
 import { Client, Room } from 'colyseus.js'
 import Phaser from 'phaser'
-import ITicTacToeState, { GameState } from '../../types/ITicTacToeState'
-import { Message } from '../../types/messages'
+import ICardSetsState, { GameState } from '../types/ICardSetsState'
+import { Message } from '../types/messages'
 
 export default class Server
 {
 	private client: Client
 	private events: Phaser.Events.EventEmitter
 
-	private room?: Room<ITicTacToeState>
+	private room?: Room<ICardSetsState>
 	private _playerIndex = -1
 
 	get playerIndex()
@@ -34,10 +34,11 @@ export default class Server
 
 	async join()
 	{
-		this.room = await this.client.joinOrCreate<ITicTacToeState>('tic-tac-toe')
+		this.room = await this.client.joinOrCreate<ICardSetsState>('card-sets-game')
 
 		this.room.onMessage(Message.PlayerIndex, (message: { playerIndex: number }) => {
-			console.log(message.playerIndex)
+			console.log('room is connected')
+			console.log(`player index: ${message.playerIndex}`)
 			this._playerIndex = message.playerIndex
 		})
 
@@ -48,9 +49,9 @@ export default class Server
 		this.room.state.onChange = (changes) => {
 			changes.forEach(change => {
 				console.log(change)
-				const { field, value } = change
+				// const { field, value } = change
 
-				switch (field)
+				/* switch (field)
 				{
 					// case 'board':
 					// 	this.events.emit('board-changed', value)
@@ -67,12 +68,8 @@ export default class Server
 					case 'gameState':
 						this.events.emit('game-state-changed', value)
 						break
-				}
+				} */
 			})
-		}
-
-		this.room.state.board.onChange = (item, idx) => {
-			this.events.emit('board-changed', item, idx)
 		}
 	}
 
@@ -103,7 +100,7 @@ export default class Server
 		this.room.send(Message.PlayerSelection, { index: idx })
 	}
 
-	onceStateChanged(cb: (state: ITicTacToeState) => void, context?: any)
+	onceStateChanged(cb: (state: ICardSetsState) => void, context?: any)
 	{
 		this.events.once('once-state-changed', cb, context)
 	}
