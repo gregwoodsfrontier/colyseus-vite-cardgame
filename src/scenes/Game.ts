@@ -1,8 +1,13 @@
 import Phaser from 'phaser'
 import { ColorNumKeys, SceneKeys } from '.'
+import type Server from '../services/Server'
+import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
 
 export default class GameScene extends Phaser.Scene
 {
+    private server?: Server
+    private onGameOver?: (data: IGameOverSceneData) => void
+
     common = [] as Phaser.GameObjects.Sprite[]
     playerScoreText?: Phaser.GameObjects.Text
     remainHand?: Phaser.GameObjects.Sprite
@@ -14,13 +19,22 @@ export default class GameScene extends Phaser.Scene
     {
         super(SceneKeys.Game)
     }
-    
-    create()
-    {   
-        // const {width, height} = this.scale
-        // const graphics = this.add.graphics()
 
-        this.createLayout();
+    async create(data: IGameSceneData)
+    {
+        const { server, onGameOver } = data
+
+		this.server = server
+		this.onGameOver = onGameOver
+
+		if (!this.server)
+		{
+			throw new Error('server instance missing')
+		}
+
+		await this.server.join()
+
+		this.server.onceStateChanged(this.createLayout, this)
 
         this.cursors = this.input.keyboard.createCursorKeys()
         
@@ -28,6 +42,7 @@ export default class GameScene extends Phaser.Scene
             spr.x = p.x
             spr.y = p.y
         })
+
     }
 
     update()
@@ -47,6 +62,7 @@ export default class GameScene extends Phaser.Scene
 
     createLayout()
     {
+        const graphics = this.add.graphics()
         // create the deck
         this.createCardBack(208, -142).setOrigin(0, 0)
 
@@ -65,8 +81,26 @@ export default class GameScene extends Phaser.Scene
         }
 
         // remaining hand
-        this.add.rectangle(750, 350, 180, 210, 0xFFA500). setOrigin(0, 0)
-        this.remainHand = this.createCard(760, 360, "diamonds3").setOrigin(0, 0)
+        this.add.rectangle(750, 330, 180, 210, 0xFFA500). setOrigin(0, 0)
+        this.remainHand = this.createCard(760, 340, "diamonds3").setOrigin(0, 0)
+
+        const sets = []
+
+        for(let i = 0; i < 3; i++)
+        {
+            const set = this.add.container(203 + (i * 190), 321.2, [
+                this.createCard(0, 0, "spades7").setOrigin(0, 0),
+                this.createCard(0, 30, "spades8").setOrigin(0, 0),
+                this.createCard(0, 60, "spades9").setOrigin(0, 0)
+            ])
+
+            sets.push(set)
+        }
+
+        const gotchi = this.add.sprite(100, 515, "gotchidev")
+        graphics.lineStyle(5, 0xff0000)
+        graphics.strokeRect(gotchi.x-gotchi.width/2, gotchi.y-gotchi.height/2, gotchi.width, gotchi.height)
+        console.log(gotchi.width)
     }
 
     createCardBack(x: number, y: number)
