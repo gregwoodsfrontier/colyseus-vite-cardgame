@@ -8,6 +8,10 @@ export default class GameScene extends Phaser.Scene
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
 
+    private disableServerConn = true
+
+    private pointText?: Phaser.GameObjects.Text
+
     common = [] as Phaser.GameObjects.Sprite[]
     playerScoreText?: Phaser.GameObjects.Text
     remainHand?: Phaser.GameObjects.Sprite
@@ -32,9 +36,16 @@ export default class GameScene extends Phaser.Scene
 			throw new Error('server instance missing')
 		}
 
-		await this.server.join()
+        if(!this.disableServerConn)
+        {
+            await this.server.join()
 
-		this.server.onceStateChanged(this.createLayout, this)
+            this.server.onceStateChanged(this.createLayout, this)
+        }
+        else
+        {
+            this.createLayout();
+        }
 
         this.cursors = this.input.keyboard.createCursorKeys()
         
@@ -73,22 +84,39 @@ export default class GameScene extends Phaser.Scene
             fontSize: '40px'
         }).setOrigin(0.5, 0)
 
-        this.createCard(15, 100, "spades3").setOrigin(0, 0)
-        for(let i = 0; i < 6; i++)
+        this.createCard(10, 100, "spades3").setOrigin(0, 0)
+
+        // commom place
+        for(let i = 0; i < 7; i++)
         {
-            const card = this.createCard(15 + (i * (140 + 10)), 100, "spades3").setOrigin(0, 0)
-            this.common.push(card)
+            const gap = 5
+            const CPWidth = this.scale.width - (gap * 2)
+            this.add.rectangle(5 + (i * CPWidth / 7), 90, 150, 210, 0xffffff, 0)
+            .setStrokeStyle(5, 0x00F7FF)
+            .setOrigin(0, 0)
+            // const card = this.createCard(15 + (i * (140 + 10)), 100, "spades3").setOrigin(0, 0)
+            // this.common.push(card)
         }
 
         // remaining hand
-        this.add.rectangle(750, 330, 180, 210, 0xFFA500). setOrigin(0, 0)
-        this.remainHand = this.createCard(760, 340, "diamonds3").setOrigin(0, 0)
+        const handArea = this.add.rectangle(this.scale.width + 8, this.scale.height*0.95, 200, 250, 0xFFA500, 0)
+        handArea.setOrigin(1, 1)
+        handArea.setStrokeStyle(8, 0xFFA500)
 
+        this.remainHand = this.createCard(
+            this.scale.width - 30, 
+            this.scale.height*0.95 - 50, 
+            "diamonds3"
+        ).setOrigin(1, 1)
+
+        // set Area
         const sets = []
 
         for(let i = 0; i < 3; i++)
         {
-            const set = this.add.container(203 + (i * 190), 321.2, [
+            const setArea = this.add.rectangle(310 + (i * (140 + 70)), 450, 180, 270, 0xffffff, 0)
+            setArea.setStrokeStyle(5, 0xfff700)
+            const set = this.add.container(240 + (i * (140 + 70)), 326, [
                 this.createCard(0, 0, "spades7").setOrigin(0, 0),
                 this.createCard(0, 30, "spades8").setOrigin(0, 0),
                 this.createCard(0, 60, "spades9").setOrigin(0, 0)
@@ -97,10 +125,15 @@ export default class GameScene extends Phaser.Scene
             sets.push(set)
         }
 
-        const gotchi = this.add.sprite(100, 515, "gotchidev")
-        graphics.lineStyle(5, 0xff0000)
-        graphics.strokeRect(gotchi.x-gotchi.width/2, gotchi.y-gotchi.height/2, gotchi.width, gotchi.height)
-        console.log(gotchi.width)
+        // add a gotchi
+        this.add.sprite(100, 515, "gotchidev")
+
+        // add player scores
+        const ptCircle = this.add.circle(100, 370, 50, 0xAA8800).setStrokeStyle(6, 0xffcc00)
+        this.pointText = this.add.text(ptCircle.x, ptCircle.y, `10`, {
+            fontSize: '60px'
+        }).setOrigin(0.5, 0.5)
+        
     }
 
     createCardBack(x: number, y: number)

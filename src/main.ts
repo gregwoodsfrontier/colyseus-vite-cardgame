@@ -3,7 +3,7 @@ import 'phaser';
 import { scenesArr } from './scenes';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
-  width: 920,
+  width: 1080,
   height: 600,
   type: Phaser.AUTO,
   parent: 'app',
