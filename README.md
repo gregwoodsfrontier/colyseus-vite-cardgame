@@ -1,13 +1,20 @@
-## See this template in action
-See it live at https://ubershmekel.github.io/vite-phaser-ts-starter/
+# Disclaimer
+
+I do not own the copyright for the assets used in this mod, copyright holders are the ones credited just above. I made this unofficial mod so the game can be discovered by new people. If you like Voice of Cards please consider buying it at your local store, Steam or Nintendo eShop.
+
+# Colyseus Card Sets Game
+
+A clone from the Game Parlor game from Voice of Cards
+
+# Template
+I am using the template from https://ubershmekel.github.io/vite-phaser-ts-starter/
 
 ## Get Started
-This is an example template. To try it out do the following:
 
 1. Clone this repo
-1. Run `npm install`
-1. Run `npm run dev`
-1. You should see a URL where your game shows up
+2. Run `npm install`
+3. Run `npm run dev`
+4. Click `localhost:3000` to see the game.
 
 ```
 {
@@ -18,8 +25,6 @@ This is an example template. To try it out do the following:
   }
 }
 ```
-
-Btw the live demo gets built by the github action at `.github/workflows/main.yml`. 
 
 ## Why this tech stack
 
