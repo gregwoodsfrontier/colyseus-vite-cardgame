@@ -42,13 +42,15 @@ export default class Server
 			this._playerIndex = message.playerIndex
 		})
 
+		// check whether if there are 2 clients connect
+
 		this.room.onStateChange.once(state => {
 			this.events.emit('once-state-changed', state)
 		})
 
 		this.room.state.onChange = (changes) => {
 			changes.forEach(change => {
-				console.log(change)
+				// console.log(change)
 				// const { field, value } = change
 
 				/* switch (field)

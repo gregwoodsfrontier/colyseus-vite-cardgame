@@ -8,16 +8,15 @@ export default class GameScene extends Phaser.Scene
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
 
-    private disableServerConn = true
+    private disableServerConn = false
 
     private pointText?: Phaser.GameObjects.Text
+    private deckText?: Phaser.GameObjects.Text
 
-    common = [] as Phaser.GameObjects.Sprite[]
-    playerScoreText?: Phaser.GameObjects.Text
+    sets = [] as Phaser.GameObjects.Container[]
+    commonCards = [] as Phaser.GameObjects.Sprite[]
     remainHand?: Phaser.GameObjects.Sprite
     cursors?: Phaser.Types.Input.Keyboard.CursorKeys
-    preX = 0
-    preY = 0
 
     constructor()
     {
@@ -74,56 +73,28 @@ export default class GameScene extends Phaser.Scene
     createLayout()
     {
         const graphics = this.add.graphics()
+        const {width, height} = this.scale
         // create the deck
-        this.createCardBack(208, -142).setOrigin(0, 0)
+        // this.createCardBack(208, -142).setOrigin(0, 0)
+        this.createDeck(208, -142).setOrigin(0, 0)
 
+        // text for remaining cards
         this.add.text(110, 10, 'Remaining', {
             fontSize: '28px'
         }).setOrigin(0.5, 0)
-        this.playerScoreText = this.add.text(110, 43, '20', {
+        this.deckText = this.add.text(110, 43, '30', {
             fontSize: '40px'
         }).setOrigin(0.5, 0)
 
-        this.createCard(10, 100, "spades3").setOrigin(0, 0)
-
         // commom place
-        for(let i = 0; i < 7; i++)
-        {
-            const gap = 5
-            const CPWidth = this.scale.width - (gap * 2)
-            this.add.rectangle(5 + (i * CPWidth / 7), 90, 150, 210, 0xffffff, 0)
-            .setStrokeStyle(5, 0x00F7FF)
-            .setOrigin(0, 0)
-            // const card = this.createCard(15 + (i * (140 + 10)), 100, "spades3").setOrigin(0, 0)
-            // this.common.push(card)
-        }
+        this.createCommonPlace(graphics, width, height)
 
         // remaining hand
-        const handArea = this.add.rectangle(this.scale.width + 8, this.scale.height*0.95, 200, 250, 0xFFA500, 0)
-        handArea.setOrigin(1, 1)
-        handArea.setStrokeStyle(8, 0xFFA500)
-
-        this.remainHand = this.createCard(
-            this.scale.width - 30, 
-            this.scale.height*0.95 - 50, 
-            "diamonds3"
-        ).setOrigin(1, 1)
+        this.createHand(graphics, width, height)
 
         // set Area
-        const sets = []
-
-        for(let i = 0; i < 3; i++)
-        {
-            const setArea = this.add.rectangle(310 + (i * (140 + 70)), 450, 180, 270, 0xffffff, 0)
-            setArea.setStrokeStyle(5, 0xfff700)
-            const set = this.add.container(240 + (i * (140 + 70)), 326, [
-                this.createCard(0, 0, "spades7").setOrigin(0, 0),
-                this.createCard(0, 30, "spades8").setOrigin(0, 0),
-                this.createCard(0, 60, "spades9").setOrigin(0, 0)
-            ])
-
-            sets.push(set)
-        }
+        this.createSetsArea(graphics)
+        
 
         // add a gotchi
         this.add.sprite(100, 515, "gotchidev")
@@ -138,9 +109,24 @@ export default class GameScene extends Phaser.Scene
 
     createCardBack(x: number, y: number)
     {
-        const back = this.add.sprite(x, y, 'cards', 'back').setInteractive().setOrigin(0.5)
+        const back = this.add.sprite(x, y, 'cards', 'back')
 
         return back
+    }
+
+    createCardBackArea(x: number, y: number)
+    {
+        const back = this.createCardBack(x, y)
+        back.setAlpha(0.4)
+
+        return back
+    }
+
+    createDeck(x: number, y: number)
+    {
+        const deck = this.createCardBack(x, y)
+
+        return deck
     }
 
     createCard(x: number, y: number, key: string)
@@ -152,34 +138,48 @@ export default class GameScene extends Phaser.Scene
         return card
     }
 
-    getRelativeWidth(_input: number)
+    createCommonPlace(graphics: Phaser.GameObjects.Graphics, width: number, height: number)
     {
-        const {width} = this.scale
-        return _input / width
+        this.add.text(width*0.5, height*0.08, 'Common Place', {
+            fontSize: '30px'
+        }).setOrigin(0.5, 0)
+
+        for(let i = 0; i < 7; i++)
+        {
+            const gap = 5
+            const CPWidth = this.scale.width - (gap * 2)
+            graphics.lineStyle(5, 0x00F7FF)
+            graphics.strokeRect(5 + (i * CPWidth / 7), 90, 150, 210)
+            const cardback = this.createCardBackArea(10 + (i * CPWidth / 7), 100).setOrigin(0, 0)
+            this.commonCards.push(cardback)
+        }
     }
 
-    getRelativeHeight(_input: number)
+    createHand(graphics: Phaser.GameObjects.Graphics, width: number, height: number)
     {
-        const {height} = this.scale
-        return _input / height
+        /* const handArea = this.add.rectangle(this.scale.width + 8, this.scale.height*0.95, 200, 250, 0xFFA500, 0)
+        handArea.setOrigin(1, 1)
+        handArea.setStrokeStyle(8, 0xFFA500) */
+        graphics.lineStyle(8, 0xFFA500)
+        graphics.strokeRect(width + 8 - 200, height*0.95 - 250, 200, 250)
+
+        this.remainHand = this.createCardBackArea(width - 30, height*0.95 - 50).setOrigin(1, 1)
     }
 
-    createCommonArea(x: number, y: number, width: number, height: number, graphics: Phaser.GameObjects.Graphics)
+    createSetsArea(graphics: Phaser.GameObjects.Graphics)
     {
-        const zone = this.add.zone(x, y, width, height)
-        zone.setDropZone(
-            new Phaser.Geom.Rectangle(0, 0, width, height),
-            () => {}
-        )
+        for(let i = 0; i < 3; i++)
+        {
+            graphics.lineStyle(5, 0xfff700)
+            graphics.strokeRect(300 + (i * 230) - 220/2, 450 - 270/2, 220, 270)
 
-        graphics.lineStyle(5, ColorNumKeys.Red)
-        graphics.strokeRect(
-            zone.x + zone.input.hitArea.x,
-            zone.y + zone.input.hitArea.y,
-            zone.input.hitArea.width,
-            zone.input.hitArea.height
-        )
+            const set = this.add.container(200 + (i * 230) + 140/2, 335 + 190/2, [
+                this.createCardBackArea(0, 0).setAngle(-3).setAlpha(0),
+                this.createCardBackArea(30, 20).setAngle(0).setAlpha(0),
+                this.createCardBackArea(60, 40).setAngle(3).setAlpha(0)
+            ])
 
-        return zone
+            this.sets.push(set)
+        }
     }
 }

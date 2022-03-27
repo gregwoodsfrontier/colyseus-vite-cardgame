@@ -9,7 +9,8 @@ export enum SceneKeys {
     Game = 'game',
     GameOver = 'game-over',
     Hello = 'hello-world',
-    Test = 'test'
+    Test = 'test',
+    CardSelection = 'card-selection'
 }
 
 export enum ColorNumKeys {
