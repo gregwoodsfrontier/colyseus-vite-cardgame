@@ -1,7 +1,7 @@
 import { Client, Room } from 'colyseus.js'
 import Phaser from 'phaser'
-import ICardSetsState, { GameState } from '../types/ICardSetsState'
-import { Message } from '../types/messages'
+import ICardSetsState, { GameState } from '../../types/ICardSetsState'
+import { Message } from '../../types/messages'
 
 export default class Server
 {

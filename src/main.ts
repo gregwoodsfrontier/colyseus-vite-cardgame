@@ -1,6 +1,6 @@
 import './style.css'
 import 'phaser';
-import { scenesArr } from './scenes';
+import { scenesArr } from './client/scenes';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
   width: 1080,

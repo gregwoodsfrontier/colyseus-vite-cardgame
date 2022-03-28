@@ -1,4 +1,4 @@
-import type Server from '../services/Server'
+import type Server from '../client/services/Server'
 
 export interface IGameOverSceneData
 {

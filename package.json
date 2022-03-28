@@ -2,6 +2,9 @@
   "name": "ld48",
   "version": "0.0.0",
   "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/backend/index.ts",
+    "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
+    "serverbuild": "npm run clean && tsc && node node_modules/copyfiles/copyfiles package.json ./lib && node node_modules/copyfiles/copyfiles arena.env ./lib",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"

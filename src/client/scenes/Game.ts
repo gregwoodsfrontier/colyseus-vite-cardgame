@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 import { ColorNumKeys, SceneKeys } from '.'
 import type Server from '../services/Server'
-import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
+import { IGameOverSceneData, IGameSceneData } from '../../types/scenes'
 
 export default class GameScene extends Phaser.Scene
 {
