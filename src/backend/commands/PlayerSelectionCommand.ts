@@ -1,15 +1,16 @@
 import { Command } from '@colyseus/command'
 import { Client } from 'colyseus'
 // import CheckWinnerCommand from './CheckWinnerCommand'
-import ICardSetsState, { GameState, PlayerNum } from '../types/ICardSetsState'
+import ICardSetsState, { GameState, PlayerNum } from '../../types/ICardSetsState'
 import { CardSets } from "../rooms/CardSets"
+import { CardSetsState } from '../rooms/schema/CardSetsState'
 
 type Payload = {
 	client: Client
 	index: number
 }
 
-export default class PlayerSelectionCommand extends Command<CardSets, Payload>
+export default class PlayerSelectionCommand extends Command<CardSetsState, Payload>
 {
 	execute(data: Payload)
 	{

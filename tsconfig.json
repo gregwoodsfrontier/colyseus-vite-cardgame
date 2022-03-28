@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "esnext",
+    "module": "commonjs",
     "lib": ["ESNext", "DOM", "scripthost"],
     "moduleResolution": "Node",
     "strict": true,

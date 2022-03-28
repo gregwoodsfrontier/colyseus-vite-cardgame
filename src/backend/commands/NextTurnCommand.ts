@@ -1,8 +1,7 @@
 import { Command } from '@colyseus/command'
-import ICardSetsState from '../types/ICardSetsState'
-import { CardSets } from '../rooms/CardSets'
+import { CardSetsState } from '../rooms/schema/CardSetsState'
 
-export default class NextTurnCommand extends Command<CardSets>
+export default class NextTurnCommand extends Command<CardSetsState>
 {
 	execute()
 	{

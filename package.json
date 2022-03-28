@@ -1,6 +1,7 @@
 {
   "name": "ld48",
   "version": "0.0.0",
+  "type":"module",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/backend/index.ts",
     "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
@@ -24,13 +25,13 @@
     "ts-node-dev": "^1.0.0-pre.63"
   },
   "dependencies": {
+    "@colyseus/arena": "^0.14.24",
     "@colyseus/command": "^0.1.6",
     "@colyseus/monitor": "^0.12.2",
     "colyseus": "^0.14.7",
     "colyseus.js": "^0.14.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "phaser": "^3.55.2",
-    "@colyseus/arena": "^0.14.22"
+    "phaser": "^3.55.2"
   }
 }

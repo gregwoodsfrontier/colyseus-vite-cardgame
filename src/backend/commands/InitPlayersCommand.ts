@@ -1,7 +1,6 @@
 import { Command } from '@colyseus/command'
 import { Client } from 'colyseus'
-import { CardSets } from "../rooms/CardSets"
-import { Player } from '../rooms/schema/CardSetsState'
+import { CardSetsState, Player } from '../rooms/schema/CardSetsState'
 import DistributeHandCommand from './DistributeHandCommand'
 
 type Payload = {
@@ -9,7 +8,7 @@ type Payload = {
 	index: number
 }
 
-export default class InitPlayersCommand extends Command<CardSets>
+export default class InitPlayersCommand extends Command<CardSetsState>
 {
 	execute()
 	{

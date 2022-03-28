@@ -1,5 +1,5 @@
 import { Schema, ArraySchema, MapSchema, type } from '@colyseus/schema'
-import ICardSetsState, { GameState } from '../../types/ICardSetsState'
+import ICardSetsState, { GameState } from '../../../types/ICardSetsState'
 
 export class CardSet extends Schema
 {

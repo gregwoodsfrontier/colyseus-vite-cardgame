@@ -7,7 +7,7 @@
  * Colyseus Server as documented here: 👉 https://docs.colyseus.io/server/api/#constructor-options 
  */
  import { listen } from "@colyseus/arena";
-
+//  const listen = require('@colyseus/arena')
  // Import arena config
  import arenaConfig from "./arena.config";
  

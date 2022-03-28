@@ -1,10 +1,10 @@
 import { Room, Client } from "colyseus";
 import { CardSetsState } from "./schema/CardSetsState";
 import { Dispatcher } from '@colyseus/command'
-import { Message } from "../types/messages";
-import { GameState } from "../types/ICardSetsState";
+import { Message } from "../../types/messages";
+import { GameState } from "../../types/ICardSetsState";
 import PlayerSelectionCommand from "../commands/PlayerSelectionCommand";
-import DistributeHandCommand from "../commands/DistributeHandCommand";
+// import DistributeHandCommand from "../commands/DistributeHandCommand";
 import InitPlayersCommand from "../commands/InitPlayersCommand";
 
 export class CardSets extends Room<CardSetsState> {
