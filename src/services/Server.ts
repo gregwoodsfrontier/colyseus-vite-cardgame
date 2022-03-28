@@ -102,6 +102,11 @@ export default class Server
 		this.room.send(Message.PlayerSelection, { index: idx })
 	}
 
+	onHandChanged(cb: (playerId: string, hand: number) => void, context: any)
+	{
+		this.events.once('hand-changed', cb, context)
+	}
+
 	onceStateChanged(cb: (state: ICardSetsState) => void, context?: any)
 	{
 		this.events.once('once-state-changed', cb, context)
