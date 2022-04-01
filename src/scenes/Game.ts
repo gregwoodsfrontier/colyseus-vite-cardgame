@@ -8,7 +8,9 @@ export default class GameScene extends Phaser.Scene
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
 
-    private disableServerConn = false
+    private selectionMode = false
+
+    private disableServerConn = true
 
     private pointText?: Phaser.GameObjects.Text
     private deckText?: Phaser.GameObjects.Text
@@ -46,28 +48,39 @@ export default class GameScene extends Phaser.Scene
             this.createLayout();
         }
 
-        this.cursors = this.input.keyboard.createCursorKeys()
+        // this.cursors = this.input.keyboard.createCursorKeys()
         
         this.input.on('drag', (p: Phaser.Input.Pointer, spr: Phaser.GameObjects.Sprite) => {
             spr.x = p.x
             spr.y = p.y
         })
 
+        // should be going to selectionMode
+        this.onSpacePressed(() => {
+            console.log('space is just pressed')
+            this.toggleSelectionMode();
+            console.log(`selection: ${this.isSelectionMode()}`)
+        }, this)
+
     }
 
-    update()
+/*     update()
     {
-        /* if(this.cursors?.space && Phaser.Input.Keyboard.JustDown(this.cursors?.space))
-        {            
-            this.createCard(
-                this.preX,
-                this.preY,
-                "spades8"
-            )
+    } */
 
-            this.preX -= 25
-            this.preY += 25
-        } */
+    private onSpacePressed(cb: () => void, context: any)
+    {
+        this.input.keyboard.on('keyup-SPACE', cb, context);
+    }
+
+    private toggleSelectionMode()
+    {
+        this.selectionMode = !this.selectionMode
+    }
+
+    private isSelectionMode()
+    {
+        return this.selectionMode
     }
 
     createLayout()
@@ -157,9 +170,6 @@ export default class GameScene extends Phaser.Scene
 
     createHand(graphics: Phaser.GameObjects.Graphics, width: number, height: number)
     {
-        /* const handArea = this.add.rectangle(this.scale.width + 8, this.scale.height*0.95, 200, 250, 0xFFA500, 0)
-        handArea.setOrigin(1, 1)
-        handArea.setStrokeStyle(8, 0xFFA500) */
         graphics.lineStyle(8, 0xFFA500)
         graphics.strokeRect(width + 8 - 200, height*0.95 - 250, 200, 250)
 

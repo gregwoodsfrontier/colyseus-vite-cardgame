@@ -112,11 +112,6 @@ export default class Server
 		this.events.once('once-state-changed', cb, context)
 	}
 
-	onBoardChanged(cb: (cell: number, index: number) => void, context?: any)
-	{
-		this.events.on('board-changed', cb, context)
-	}
-
 	onPlayerTurnChanged(cb: (playerIndex: number) => void, context?: any)
 	{
 		this.events.on('player-turn-changed', cb, context)
