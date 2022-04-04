@@ -48,29 +48,37 @@ export default class Server
 			this.events.emit('once-state-changed', state)
 		})
 
+		this.room.state.players.onAdd = (player, key) => {
+			console.log(player)
+			console.log("has been added at", key);
+
+			// If you want to track changes on a child object inside a map, this is a common pattern:
+			player.onChange = function (changes: any[]) {
+				changes.forEach(change => {
+					if(change.field === 'hand')
+					{
+						console.warn('this is hand')
+					}
+					else
+					{
+						console.log(change.field);
+					}
+			
+					console.log(change.value);
+					console.log(change.previousValue);
+				})
+			};
+		
+			// force "onChange" to be called immediatelly
+			player.triggerAll();
+		}
+
 		this.room.state.onChange = (changes) => {
 			changes.forEach(change => {
-				// console.log(change)
-				// const { field, value } = change
-
-				/* switch (field)
-				{
-					// case 'board':
-					// 	this.events.emit('board-changed', value)
-					// 	break
-					
-					case 'activePlayer':
-						this.events.emit('player-turn-changed', value)
-						break
-
-					case 'winningPlayer':
-						this.events.emit('player-win', value)
-						break
-
-					case 'gameState':
-						this.events.emit('game-state-changed', value)
-						break
-				} */
+				console.log(change.field)
+				console.log(change.value)
+				console.log(change.previousValue)
+				
 			})
 		}
 	}
@@ -102,7 +110,7 @@ export default class Server
 		this.room.send(Message.PlayerSelection, { index: idx })
 	}
 
-	onHandChanged(cb: (playerId: string, hand: number) => void, context: any)
+	onHandChanged(cb: () => void, context?: any)
 	{
 		this.events.once('hand-changed', cb, context)
 	}

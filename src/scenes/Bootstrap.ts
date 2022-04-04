@@ -50,4 +50,9 @@ export default class Bootstrap extends Phaser.Scene
 			onGameOver: this.handleGameOver
 		})
 	}
+
+	private startCardSelection()
+	{
+		this.scene.launch(SceneKeys.CardSelection)
+	}
 }

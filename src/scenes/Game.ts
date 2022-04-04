@@ -10,7 +10,7 @@ export default class GameScene extends Phaser.Scene
 
     private selectionMode = false
 
-    private disableServerConn = true
+    private disableServerConn = false
 
     private pointText?: Phaser.GameObjects.Text
     private deckText?: Phaser.GameObjects.Text
@@ -62,9 +62,13 @@ export default class GameScene extends Phaser.Scene
             console.log(`selection: ${this.isSelectionMode()}`)
         }, this)
 
+        this.server.onHandChanged(() => {
+            console.log('change to card selection')
+        })
+
     }
 
-/*     update()
+    /*     update()
     {
     } */
 
