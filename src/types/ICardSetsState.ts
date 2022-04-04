@@ -13,24 +13,28 @@ export enum GameState
 	Finished
 }
 
-export interface ICardSet extends Schema
+export const MAX_HAND_PER_PLAYER = 4
+
+export const MAX_TOT_NUM_CARDS_SETS = 9
+
+export interface ICard extends Schema
 {
-    setA: ArraySchema
+	pattern: number
 
-    setB: ArraySchema
+	points: number
 
-    setC: ArraySchema
+	owner: string
+
+	isDiscarded: boolean
 }
 
-export interface IPlayer extends Schema 
+export interface IPlayer extends Schema
 {
-    hand: ArraySchema
+	hand: ArraySchema
 
-    sets: MapSchema
+	sets: ArraySchema
 
-    points: number
-
-    id: number
+	points: number
 }
 
 export interface ICardSetsState extends Schema
@@ -41,7 +45,7 @@ export interface ICardSetsState extends Schema
 
 	deck: ArraySchema
 	
-	common: ArraySchema
+	pot: ArraySchema
 
 	activePlayer: number
 
