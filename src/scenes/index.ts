@@ -1,7 +1,7 @@
 import BootStrap from "./Bootstrap";
 import GameOver from "./Gameover";
 import HelloWorld from "./HelloWorld";
-import GameScene from "./Game";
+import BoardScene from "./Board";
 import TestScene from "./TestScene";
 
 export enum SceneKeys {
@@ -18,4 +18,4 @@ export enum ColorNumKeys {
 }
 
 // export const scenesArr = [HelloWorld]
-export const scenesArr = [BootStrap, GameScene, TestScene]
+export const scenesArr = [BootStrap, BoardScene, TestScene]
