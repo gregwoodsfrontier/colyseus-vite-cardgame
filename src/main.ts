@@ -1,6 +1,7 @@
 import './style.css'
 import 'phaser';
 import { scenesArr } from './scenes';
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
   width: 1080,
@@ -14,6 +15,15 @@ const GameConfig: Phaser.Types.Core.GameConfig = {
       gravity: { y: 0 },
       debug: false
     }
+  },
+  plugins: {
+    scene: [{
+        key: 'rexUI',
+        plugin: RexUIPlugin,
+        mapping: 'rexUI'
+    },
+    // ...
+    ]
   },
   backgroundColor: '#666600',
   render: { pixelArt: false, antialias: true },

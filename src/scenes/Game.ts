@@ -1,7 +1,8 @@
 import Phaser from 'phaser'
-import { ColorNumKeys, SceneKeys } from '.'
+import { SceneKeys } from '.'
 import type Server from '../services/Server'
 import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
+import { Dialog } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
 
 export default class GameScene extends Phaser.Scene
 {
@@ -14,6 +15,9 @@ export default class GameScene extends Phaser.Scene
 
     private pointText?: Phaser.GameObjects.Text
     private deckText?: Phaser.GameObjects.Text
+
+    // msg box for displaying what players should do
+    private msgBox?: Phaser.GameObjects.Rectangle
 
     sets = [] as Phaser.GameObjects.Container[]
     commonCards = [] as Phaser.GameObjects.Sprite[]
