@@ -32,3 +32,10 @@ export enum CardsName {
     Spade7 = "spades7",
     Spade8 = "spades8",
 }
+
+export enum Pattern {
+    Diamond = "diamonds",
+    Heart = "hearts",
+    Club = "clubs",
+    Spade = "spades"
+}
