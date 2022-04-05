@@ -72,6 +72,11 @@ export default class GameScene extends Phaser.Scene
     {
     } */
 
+    private setRemainHand(spriteName: string)
+    {
+        this.remainHand?.setTexture(spriteName)
+    }
+
     private onSpacePressed(cb: () => void, context: any)
     {
         this.input.keyboard.on('keyup-SPACE', cb, context);
