@@ -4,7 +4,7 @@ import type Server from '../services/Server'
 import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
 import { Dialog } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
 
-export default class GameScene extends Phaser.Scene
+export default class BoardScene extends Phaser.Scene
 {
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
