@@ -24,6 +24,7 @@ export default class Bootstrap extends Phaser.Scene
 		this.load.atlas('cards', 'cards.png', 'cards.json')
 		this.load.image('black-hole', 'black-hole.png')
 		this.load.svg('gotchidev', 'GotchiDev.svg')
+		this.load.svg('hacker', 'H4cker.svg')
     }
 
 	create()

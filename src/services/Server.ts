@@ -43,6 +43,7 @@ export default class Server
 			console.log('room is connected')
 			console.log(`player index: ${message.playerIndex}`)
 			this._playerIndex = message.playerIndex
+			this.events.emit(PhaserEvents.SET_CHAR, message.playerIndex)
 		})
 
 		// check whether if there are 2 clients connect
@@ -61,15 +62,9 @@ export default class Server
 
 					switch (field) {
 						case 'hand': {
-							value.forEach((card: ICard, key: number) => {
-								console.log("pattern", card.pattern)
-								console.log("points", card.points)
-								if(card.pattern && card.points)
-								{
-									const spriteName = getSpriteName(card.pattern, card.points)
-									events.emit(PhaserEvents.HAND_CHANGED, spriteName)
-								}	
-							})
+							const sprName = getSpriteName(value[0].pattern, value[0].points)
+							console.log('spriteName', sprName)
+							events.emit(PhaserEvents.HAND_CHANGED, sprName)
 							break
 						}
 						case 'sets': {
@@ -114,7 +109,12 @@ export default class Server
 		this.room.send(Message.PlayerSelect, { index: idx })
 	}
 
-	onHandChanged(cb: () => void, context?: any)
+	onPlayerIndexChanged(cb: (idx: number) => void, context?: any)
+	{
+		this.events.on(PhaserEvents.SET_CHAR, cb, context)
+	}
+
+	onHandChanged(cb: (spriteName: string) => void, context?: any)
 	{
 		this.events.on(PhaserEvents.HAND_CHANGED, cb, context)
 	}
