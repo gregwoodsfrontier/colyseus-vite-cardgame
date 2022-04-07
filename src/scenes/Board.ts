@@ -8,6 +8,7 @@ export default class BoardScene extends Phaser.Scene
 {
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
+    private character?: Phaser.GameObjects.Sprite
 
     private selectionMode = false
 
@@ -66,9 +67,9 @@ export default class BoardScene extends Phaser.Scene
             console.log(`selection: ${this.isSelectionMode()}`)
         }, this)
 
-        this.server.onHandChanged(() => {
-            console.log('change to card selection')
-        })
+        this.server.onHandChanged(this.setRemainHand, this)
+
+        this.server.onPlayerIndexChanged(this.setCharacterSprite, this)
 
     }
 
@@ -78,7 +79,12 @@ export default class BoardScene extends Phaser.Scene
 
     private setRemainHand(spriteName: string)
     {
-        this.remainHand?.setTexture(spriteName)
+        this.remainHand?.setFrame(spriteName).setOrigin(1, 1).setAlpha(1)
+    }
+
+    private removeRemainHand()
+    {
+        this.remainHand?.setFrame('back').setAlpha(0.5).setOrigin(1,1)
     }
 
     private onSpacePressed(cb: () => void, context: any)
@@ -121,9 +127,8 @@ export default class BoardScene extends Phaser.Scene
         // set Area
         this.createSetsArea(graphics)
         
-
         // add a gotchi
-        this.add.sprite(100, 515, "gotchidev")
+        this.createCharacter()
 
         // add player scores
         const ptCircle = this.add.circle(100, 370, 50, 0xAA8800).setStrokeStyle(6, 0xffcc00)
@@ -131,6 +136,16 @@ export default class BoardScene extends Phaser.Scene
             fontSize: '60px'
         }).setOrigin(0.5, 0.5)
         
+    }
+
+    createCharacter()
+    {
+        this.character = this.add.sprite(100, 515, "gotchidev")
+    }
+
+    setCharacterSprite(idx: number)
+    {
+        this.character?.setTexture(idx === 0 ? "gotchidev" : "hacker")
     }
 
     createCardBack(x: number, y: number)
