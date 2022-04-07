@@ -3,6 +3,7 @@ import Phaser from 'phaser'
 import { getSpriteName } from '../helpers'
 import ICardSetsState, { IPlayer, GameState, ICard } from '../types/ICardSetsState'
 import { Message } from '../types/messages'
+import { PhaserEvents } from '../types/phaserEvents'
 
 export default class Server
 {
@@ -61,9 +62,13 @@ export default class Server
 					switch (field) {
 						case 'hand': {
 							value.forEach((card: ICard, key: number) => {
-								
-								const spriteName = getSpriteName(card.pattern, card.points)
-								events.emit('hand-changed', spriteName)
+								console.log("pattern", card.pattern)
+								console.log("points", card.points)
+								if(card.pattern && card.points)
+								{
+									const spriteName = getSpriteName(card.pattern, card.points)
+									events.emit(PhaserEvents.HAND_CHANGED, spriteName)
+								}	
 							})
 							break
 						}
@@ -111,7 +116,7 @@ export default class Server
 
 	onHandChanged(cb: () => void, context?: any)
 	{
-		this.events.on('hand-changed', cb, context)
+		this.events.on(PhaserEvents.HAND_CHANGED, cb, context)
 	}
 
 	onceStateChanged(cb: (state: ICardSetsState) => void, context?: any)

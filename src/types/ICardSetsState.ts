@@ -35,6 +35,8 @@ export interface IPlayer extends Schema
 	sets: ArraySchema
 
 	points: number
+
+	id: string
 }
 
 export interface ICardSetsState extends Schema
