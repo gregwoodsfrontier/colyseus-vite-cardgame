@@ -46,6 +46,20 @@ export default class Server
 			this.events.emit(PhaserEvents.SET_CHAR, message.playerIndex)
 		})
 
+		this.room.onMessage(Message.BoardcastTurnStart, (message: { playerIndex: number }) => {
+			if(this._playerIndex === message.playerIndex)
+			{
+				console.log('this is your turn')
+			}
+			else
+			{
+				console.log('this is opponents turn')
+			}
+		})
+
+		// listen from server: Time to proceed to next step
+
+
 		// check whether if there are 2 clients connect
 
 		this.room.onStateChange.once(state => {
