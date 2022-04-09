@@ -2,10 +2,13 @@ import Phaser from 'phaser'
 import { SceneKeys } from '.'
 import type Server from '../services/Server'
 import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
-import { Dialog } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
+import Dialog from 'phaser3-rex-plugins/templates/ui/dialog/Dialog';
 
 export default class BoardScene extends Phaser.Scene
 {
+    rexUI!: RexUIPlugin
+
     private server?: Server
     private onGameOver?: (data: IGameOverSceneData) => void
     private character?: Phaser.GameObjects.Sprite
@@ -18,7 +21,7 @@ export default class BoardScene extends Phaser.Scene
     private deckText?: Phaser.GameObjects.Text
 
     // msg box for displaying what players should do
-    private msgBox?: Phaser.GameObjects.Rectangle
+    private msgBox?: Dialog
 
     sets = [] as Phaser.GameObjects.Container[]
     commonCards = [] as Phaser.GameObjects.Sprite[]
@@ -110,6 +113,8 @@ export default class BoardScene extends Phaser.Scene
         // this.createCardBack(208, -142).setOrigin(0, 0)
         this.createDeck(208, -142).setOrigin(0, 0)
 
+        this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your turn.')
+
         // text for remaining cards
         this.add.text(110, 10, 'Remaining', {
             fontSize: '28px'
@@ -136,6 +141,35 @@ export default class BoardScene extends Phaser.Scene
             fontSize: '60px'
         }).setOrigin(0.5, 0.5)
         
+    }
+
+    createDialog(posx: number, posy: number, dialog: string)
+    {
+        return this.rexUI.add.dialog({
+            x: posx, 
+            y: posy,
+            width: dialog.length * 13,
+            background: this.rexUI.add.roundRectangle(0, 0, 100, 100, 20, 0x1565c0),
+            content: this.createRexLabel(this, dialog)
+        })
+        .layout()
+        .popUp(500)
+        .setDepth(2)
+    }
+
+    createRexLabel(s: Phaser.Scene, text: string)
+    {
+        return this.rexUI.add.label({
+            text: s.add.text(0, 0, text, {
+                fontSize: '24px'
+            }),
+            space: {
+                left: 10,
+                right: 10,
+                top: 10,
+                bottom: 10
+            }
+        })
     }
 
     createCharacter()
