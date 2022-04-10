@@ -4,6 +4,7 @@ import type Server from '../services/Server'
 import { IGameOverSceneData, IGameSceneData } from '../types/scenes'
 import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import Dialog from 'phaser3-rex-plugins/templates/ui/dialog/Dialog';
+import { ICheckActivePlayer } from '../services/Server';
 
 export default class BoardScene extends Phaser.Scene
 {
@@ -74,11 +75,41 @@ export default class BoardScene extends Phaser.Scene
 
         this.server.onPlayerIndexChanged(this.setCharacterSprite, this)
 
+        this.server.onBoardcastTurnStart(this.handleTurnStartMsgBox, this)
+
     }
 
     /*     update()
     {
     } */
+
+    private handleTurnStartMsgBox(data: ICheckActivePlayer)
+    {
+        const { isYourTurn } = data
+        const { width, height } = this.scale
+
+        if(!this.msgBox)
+        {
+            return
+        }
+
+        if( isYourTurn === true )
+        {
+            this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your turn.')
+            // this.msgBox.getElement('content')
+        }
+        else
+        {
+            this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your rivals turn.')
+        }
+
+        this.msgBox.setInteractive()
+        this.msgBox.on('pointerup', () => {
+            this.hideMsgBox();
+        })
+
+        return
+    }
 
     private setRemainHand(spriteName: string)
     {
@@ -113,8 +144,6 @@ export default class BoardScene extends Phaser.Scene
         // this.createCardBack(208, -142).setOrigin(0, 0)
         this.createDeck(208, -142).setOrigin(0, 0)
 
-        this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your turn.')
-
         // text for remaining cards
         this.add.text(110, 10, 'Remaining', {
             fontSize: '28px'
@@ -122,6 +151,8 @@ export default class BoardScene extends Phaser.Scene
         this.deckText = this.add.text(110, 43, '30', {
             fontSize: '40px'
         }).setOrigin(0.5, 0)
+
+        this.msgBox = this.createDialog(width/2, height*1.2/4, '').setAlpha(0)
 
         // commom place
         this.createCommonPlace(graphics, width, height)
@@ -155,6 +186,31 @@ export default class BoardScene extends Phaser.Scene
         .layout()
         .popUp(500)
         .setDepth(2)
+        .setInteractive()
+    }
+
+    private showMsgBox()
+    {
+        if(!this.msgBox)
+        {
+            return
+        }
+        else
+        {
+            this.msgBox.popUp(500)
+        }
+    }
+
+    private hideMsgBox()
+    {
+        if(!this.msgBox)
+        {
+            return
+        }
+        else
+        {
+            this.msgBox.scaleDown(500)
+        }
     }
 
     createRexLabel(s: Phaser.Scene, text: string)

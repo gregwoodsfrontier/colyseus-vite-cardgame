@@ -4,5 +4,6 @@ export enum Message
 	RequestPlayerSelect,
 	PlayerSelect,
 	RenderHand,
-	BoardcastTurnStart
+	BoardcastTurnStart,
+	TurnStartProceed
 }

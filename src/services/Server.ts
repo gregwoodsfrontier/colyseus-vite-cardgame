@@ -5,6 +5,10 @@ import ICardSetsState, { IPlayer, GameState, ICard } from '../types/ICardSetsSta
 import { Message } from '../types/messages'
 import { PhaserEvents } from '../types/phaserEvents'
 
+export interface ICheckActivePlayer {
+	isYourTurn: boolean
+}
+
 export default class Server
 {
 	private client: Client
@@ -49,11 +53,15 @@ export default class Server
 		this.room.onMessage(Message.BoardcastTurnStart, (message: { playerIndex: number }) => {
 			if(this._playerIndex === message.playerIndex)
 			{
-				console.log('this is your turn')
+				this.events.emit('turn-start', {
+					isYourTurn: true
+				})
 			}
 			else
 			{
-				console.log('this is opponents turn')
+				this.events.emit('turn-start', {
+					isYourTurn: false
+				})
 			}
 		})
 
@@ -121,6 +129,38 @@ export default class Server
 		}
 
 		this.room.send(Message.PlayerSelect, { index: idx })
+	}
+
+	proceedNextStep(idx: number)
+	{
+		if (!this.room)
+		{
+			return
+		}
+
+		if (this.room.state.gameState !== GameState.Playing)
+		{
+			return
+		}
+
+		if (this.playerIndex !== this.room.state.activePlayer)
+		{
+			console.warn('not this player\'s turn')
+			return
+		}
+
+		this.room.send(Message.TurnStartProceed, { playerIndex: this._playerIndex })
+	}
+
+	/**
+	 * Called on Board.ts to react to the message
+	 * 
+	 * @param cb 
+	 * @param context 
+	 */
+	onBoardcastTurnStart(cb: (data: ICheckActivePlayer) => void, context?: any)
+	{
+		this.events.on('turn-start', cb, context)
 	}
 
 	onPlayerIndexChanged(cb: (idx: number) => void, context?: any)
