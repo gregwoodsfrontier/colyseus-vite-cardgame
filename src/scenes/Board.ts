@@ -77,6 +77,14 @@ export default class BoardScene extends Phaser.Scene
 
         this.server.onBoardcastTurnStart(this.handleTurnStartMsgBox, this)
 
+        this.server.onCloseTurnStartDialog(() => {
+            console.log('close turn start dialog')
+
+            this.hideMsgBox()
+            return
+
+        }, this)
+
     }
 
     /*     update()
@@ -96,17 +104,21 @@ export default class BoardScene extends Phaser.Scene
         if( isYourTurn === true )
         {
             this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your turn.')
+            
+            this.msgBox.setInteractive()
+            this.msgBox.on('pointerup', () => {
+                this.hideMsgBox()
+                this.server?.confirmTurnStart()
+            })
             // this.msgBox.getElement('content')
         }
         else
         {
             this.msgBox = this.createDialog(width/2, height*1.2/4, 'This is your rivals turn.')
+            this.msgBox.disableInteractive()
         }
 
-        this.msgBox.setInteractive()
-        this.msgBox.on('pointerup', () => {
-            this.hideMsgBox();
-        })
+        
 
         return
     }

@@ -5,5 +5,7 @@ export enum Message
 	PlayerSelect,
 	RenderHand,
 	BoardcastTurnStart,
-	TurnStartProceed
+	TurnStartProceed,
+	ConfirmTurnStart,
+	CloseTurnStartDialog
 }

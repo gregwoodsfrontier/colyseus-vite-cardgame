@@ -9,6 +9,10 @@ export interface ICheckActivePlayer {
 	isYourTurn: boolean
 }
 
+export interface IMessage {
+	index: number
+}
+
 export default class Server
 {
 	private client: Client
@@ -65,6 +69,26 @@ export default class Server
 			}
 		})
 
+		this.room.onMessage(Message.CloseTurnStartDialog, () => {
+			console.log('close-turn-start-dialog')
+
+			if (!this.room)
+			{
+				return
+			}
+
+			if (this.room.state.gameState !== GameState.Playing)
+			{
+				return
+			}
+
+			if (this.playerIndex !== this.room.state.activePlayer)
+			{
+				this.events.emit('close-turn-start-dialog')
+				return
+			}
+		})
+
 		// listen from server: Time to proceed to next step
 
 
@@ -84,19 +108,24 @@ export default class Server
 
 					switch (field) {
 						case 'hand': {
+							if(!value[0])
+							{
+								console.warn('no value here')
+								return 
+							}
 							const sprName = getSpriteName(value[0].pattern, value[0].points)
 							console.log('spriteName', sprName)
 							events.emit(PhaserEvents.HAND_CHANGED, sprName)
 							break
 						}
-						case 'sets': {
+						/* case 'sets': {
 							console.log("player sets")
 							break
 						}
 						case 'points': {
 							console.log("player points")
 							break
-						}
+						} */
 					}
 				})
 			}
@@ -114,7 +143,7 @@ export default class Server
 	{
 		if (!this.room)
 		{
-			return
+			return false
 		}
 
 		if (this.room.state.gameState !== GameState.Playing)
@@ -135,9 +164,9 @@ export default class Server
 	{
 		if (!this.room)
 		{
-			return
+			return false
 		}
-
+		
 		if (this.room.state.gameState !== GameState.Playing)
 		{
 			return
@@ -150,6 +179,40 @@ export default class Server
 		}
 
 		this.room.send(Message.TurnStartProceed, { playerIndex: this._playerIndex })
+	}
+
+	confirmTurnStart()
+	{
+		console.log('confirm turn start')
+
+		if (!this.room)
+		{
+			return
+		}
+		
+		if (this.room.state.gameState !== GameState.Playing)
+		{
+			return
+		}
+
+		if (this.playerIndex !== this.room.state.activePlayer)
+		{
+			console.warn('not this player\'s turn')
+			return
+		}
+
+		const message = {
+			index: this._playerIndex
+		}
+
+		console.log('confirm turn start 2')
+		
+		this.room?.send(Message.ConfirmTurnStart, message)
+	}
+
+	onCloseTurnStartDialog(cb: () => void, context?: any)
+	{
+		this.events.on('close-turn-start-dialog', cb, context)
 	}
 
 	/**
